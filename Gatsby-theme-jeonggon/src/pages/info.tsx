@@ -62,6 +62,7 @@ const InfoPage: FunctionComponent<InfoPageProps> = function ({
 
 export default InfoPage
 
+
 export const metadataQuery = graphql`
   {
     site {
