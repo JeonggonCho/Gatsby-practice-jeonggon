@@ -3,7 +3,6 @@ import { graphql } from 'gatsby'
 import { Global, css } from '@emotion/react'
 import styled from '@emotion/styled'
 
-
 const globalStyle = css`
   * {
     margin: 0;
