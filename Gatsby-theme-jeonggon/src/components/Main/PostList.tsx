@@ -33,11 +33,11 @@ const PostList: FunctionComponent<PostListProps> = function ({posts, selectedCat
     <PostListWrapper ref={containerRef}>
       {postList.map(
         ({
-           node: { id, frontmatter }
+           node: { id, fields: {slug}, frontmatter }
         }: PostListItemType) => (
           <PostItem
             {...frontmatter}
-            link="https://www.google.co.kr/"
+            link={slug}
             key={id}
           />
         )
