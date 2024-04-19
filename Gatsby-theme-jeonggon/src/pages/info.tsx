@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 import { graphql } from 'gatsby'
 import { Global, css } from '@emotion/react'
 import styled from '@emotion/styled'
@@ -42,7 +42,7 @@ type InfoPageProps = {
   }
 }
 
-const InfoPage: FunctionComponent<InfoPageProps> = function ({
+const InfoPage: FC<InfoPageProps> = function ({
   data: {
     site: {
       siteMetadata: { title, description, author },

@@ -1,13 +1,13 @@
-import React, { FunctionComponent, useMemo } from 'react'
-import styled from '@emotion/styled'
+import React, { FC, useMemo } from 'react'
 import Introduction from 'components/Main/Introduction'
-import CategoryList from 'components/Main/CategoryList'
+import CategoryList,{ CategoryListProps } from 'components/Main/CategoryList'
 import PostList from 'components/Main/PostList'
 import {graphql} from 'gatsby'
 import { PostListItemType } from '../types/PostItem.types'
 import {IGatsbyImageData} from 'gatsby-plugin-image'
 import queryString, {ParsedQuery} from 'query-string'
 import Template from 'components/Common/Template'
+
 
 type IndexPageProps = {
   location: {
@@ -25,7 +25,7 @@ type IndexPageProps = {
   }
 }
 
-const IndexPage: FunctionComponent<IndexPageProps> = function ({
+const IndexPage: FC<IndexPageProps> = function ({
   location: {search},
   data: {
     allMarkdownRemark: { edges },
@@ -49,7 +49,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
             },
           }: PostType,
         ) => {
-          categories.forEach(category => {
+          categories.forEach((category: string) => {
             if (list[category] === undefined) list[category] = 1;
             else list[category]++;
           });
