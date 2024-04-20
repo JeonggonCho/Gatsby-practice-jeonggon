@@ -14,6 +14,13 @@ type IndexPageProps = {
     search: string
   }
   data: {
+    site: {
+      siteMetadata: {
+        title: string
+        description: string
+        siteUrl: string
+      }
+    }
     allMarkdownRemark: {
       edges: PostListItemType[]
     }
@@ -21,6 +28,7 @@ type IndexPageProps = {
       childImageSharp: {
         gatsbyImageData: IGatsbyImageData
       }
+      publicUrl: string
     }
   }
 }
@@ -28,9 +36,13 @@ type IndexPageProps = {
 const IndexPage: FC<IndexPageProps> = function ({
   location: {search},
   data: {
+    site: {
+      siteMetadata: {title, description, siteUrl}
+    },
     allMarkdownRemark: { edges },
     file: {
       childImageSharp: {gatsbyImageData},
+      publicUrl
     },
   },
 }) {
@@ -64,7 +76,12 @@ const IndexPage: FC<IndexPageProps> = function ({
   )
 
   return (
-    <Template>
+    <Template
+      title={title}
+      description={description}
+      url={siteUrl}
+      image={publicUrl}
+    >
       <Introduction profileImage={gatsbyImageData} />
       <CategoryList selectedCategory={selectedCategory} categoryList={categoryList} />
       <PostList selectedCategory={selectedCategory} posts={edges} />
@@ -76,6 +93,13 @@ export default IndexPage;
 
 export const getPostList = graphql`
     query getPostList {
+        site {
+            siteMetadata {
+                title
+                description
+                siteUrl
+            }
+        }
         allMarkdownRemark(
             sort: { order: DESC, fields: [frontmatter___date, frontmatter___title] }
         ) {
@@ -104,5 +128,6 @@ export const getPostList = graphql`
                 gatsbyImageData(width: 120, height: 120)
             }
         }
+        publicURL
     }
 `;
