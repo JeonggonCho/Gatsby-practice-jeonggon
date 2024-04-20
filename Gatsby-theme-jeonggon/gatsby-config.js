@@ -3,7 +3,7 @@ module.exports = {
     title: `조정곤 개발 블로그`,
     description: `주니어 개발자로서 지식과 개발 정보 정리한 블로그입니다.`,
     author: `JeonggonCho`,
-    siteUrl: '<https://my-website-link.com>',
+    siteUrl: 'https://naver.com',
   },
   plugins: [
     {
