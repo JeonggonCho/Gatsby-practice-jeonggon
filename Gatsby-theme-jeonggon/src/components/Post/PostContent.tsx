@@ -54,7 +54,7 @@ const MarkdownRenderer = styled.div`
     blockquote {
         margin: 30px 0;
         padding: 5px 15px;
-        border-left: 2px solid # 000000;
+        border-left: 2px solid #000000;
         font-weight: 800;
     }
     
@@ -87,6 +87,34 @@ const MarkdownRenderer = styled.div`
     code[class*='language-'],
     pre[class*='language-'] {
         tab-size: 2;
+    }
+    
+    // 반응형 마크다운 디자인
+    @media (max-width: 768px) {
+        width: 100%;
+        padding: 80px 20px;
+        line-height: 1.6;
+        font-size: 14px;
+        
+        h1 {
+            font-size: 23px;
+        }
+        
+        h2 {
+            font-size: 20px;
+        }
+        
+        h3 {
+            font-size: 17px;
+        }
+        
+        img {
+            width: 100%;
+        }
+        
+        hr {
+            margin: 50px 0;
+        }
     }
 `;
 
