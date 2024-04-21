@@ -7,6 +7,12 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        policy: [{userAgent: '*', allow: '/'}],
+      },
+    },
+    {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
         siteUrl: 'https://naver.com',
