@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `조정곤 개발 블로그`,
+    title: `조정곤의 개발 블로그`,
     description: `주니어 개발자로서 지식과 개발 정보 정리한 블로그입니다.`,
     author: `JeonggonCho`,
-    siteUrl: 'https://naver.com',
+    siteUrl: 'https://JeonggonCho.github.io/',
   },
   plugins: [
     {
@@ -15,7 +15,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: 'https://naver.com',
+        siteUrl: 'https://JeonggonCho.github.io/',
         stripQueryString: true,
       }
     },
