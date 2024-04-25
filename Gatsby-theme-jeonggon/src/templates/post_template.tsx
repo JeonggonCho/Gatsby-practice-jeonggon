@@ -4,6 +4,7 @@ import Template from 'components/Common/Template'
 import PostHead from 'components/Post/PostHead'
 import { PostFrontmatterType } from '../types/PostItem.types'
 import PostContent from 'components/Post/PostContent'
+import CommentWidget from 'components/Post/CommentWidget'
 
 export type PostPageItemType = {
   node: {
@@ -54,6 +55,7 @@ const PostTemplate: FC<PostTemplateProps> = ({
         thumbnail={gatsbyImageData}
       />
       <PostContent html={html}/>
+      <CommentWidget/>
     </Template>
   );
 };
